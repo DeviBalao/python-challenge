@@ -11,10 +11,10 @@ vote_percent_list = []
 total_votes = 0
 
 filename = "election_data.csv"
-#folderpath = os.path.join ("C:","Devi_Files","BootCamp","GitHub","python-challenge","PyPoll","Resources")
-folderpath = "C:\Devi_Files\BootCamp\GitHub\python-challenge\PyPoll\Resources"
+folderdrive = "C:\\"
+folderpath = os.path.join (folderdrive,"Devi_Files","BootCamp","GitHub","python-challenge","PyPoll","Resources")
 filepath = os.path.join (folderpath,filename)
-#print (filepath)
+
 
 # Read csv file
 with open(filepath) as election_datafile:
@@ -56,3 +56,22 @@ with open(filepath) as election_datafile:
     print(f"Winner: {winner}")
     print ("-------------------------------")
 
+
+analysisfilename = "results.txt"
+analysisfolderdrive = "C:\\"
+analysisfolderpath = os.path.join (analysisfolderdrive,"Devi_Files","BootCamp","GitHub","python-challenge","PyPoll","analysis")
+analysisfilepath = os.path.join(analysisfolderpath, analysisfilename)
+
+
+# Write results to a file
+with open(analysisfilepath,"w") as analysisfile:
+    # Write the Election Results
+    analysisfile.write("Election Results\n")
+    analysisfile.write ("------------------------------------------------\n")
+    analysisfile.write (f"Total Votes: {total_votes}\n")   
+    analysisfile.write ("------------------------------------------------\n")
+    for candidate in zip(candidates,vote_percent_list,vote_count_list):        
+        analysisfile.write(f"{candidate[0]}: {candidate[1]:.3f}% ({candidate[2]})\n")
+    analysisfile.write ("------------------------------------------------\n")
+    analysisfile.write(f"Winner: {winner}\n")
+    analysisfile.write ("------------------------------------------------")
