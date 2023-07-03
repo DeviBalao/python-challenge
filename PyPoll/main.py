@@ -11,16 +11,14 @@ vote_percent_list = []
 total_votes = 0
 
 filename = "election_data.csv"
-folderdrive = "C:\\"
-folderpath = os.path.join (folderdrive,"Devi_Files","BootCamp","GitHub","python-challenge","PyPoll","Resources")
+folderpath = os.path.join ("Resources")
 filepath = os.path.join (folderpath,filename)
 
 
 # Read csv file
 with open(filepath) as election_datafile:
     csvreader = csv.reader (election_datafile,delimiter=",")
-    csvheader = next(csvreader)
-    #print (f"CSV Header: {csvheader}")
+    csvheader = next(csvreader)    
 
     # Storing data from CSV file in lists
     for ballot_Id,county,candidate in csvreader:
@@ -58,8 +56,7 @@ with open(filepath) as election_datafile:
 
 
 analysisfilename = "results.txt"
-analysisfolderdrive = "C:\\"
-analysisfolderpath = os.path.join (analysisfolderdrive,"Devi_Files","BootCamp","GitHub","python-challenge","PyPoll","analysis")
+analysisfolderpath = os.path.join ("analysis")
 analysisfilepath = os.path.join(analysisfolderpath, analysisfilename)
 
 

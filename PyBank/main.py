@@ -9,9 +9,9 @@ budget_change_list = []
 
 # Set variables to the file location of the csv file
 filename = "budget_data.csv"
-folderdrive = "C:\\"
-folderpath = os.path.join (folderdrive,"Devi_Files","BootCamp","GitHub","python-challenge","PyBank","Resources")
+folderpath = os.path.join ("Resources")
 filepath = os.path.join (folderpath,filename)
+
 
 # Open and read budget data from csv file
 with open (filepath) as budgetdatacsv:
@@ -58,8 +58,7 @@ with open (filepath) as budgetdatacsv:
         
 # Create a text file to write the results
 output_filename = "financial_results.txt"
-output_folderdrive = "C:\\"
-output_folderpath = os.path.join(output_folderdrive,"Devi_Files","BootCamp","GitHub","python-challenge","PyBank","analysis")
+output_folderpath = os.path.join("analysis")
 output_filepath = os.path.join (output_folderpath,output_filename)
     
 # Write the results to text file
